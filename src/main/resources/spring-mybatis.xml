@@ -97,7 +97,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		<aop:pointcut id="transactionPointcut" expression="execution(* sy.service..*Impl.*(..))" />
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.ssmm.service..*Impl.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
 	</aop:config>
 

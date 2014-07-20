@@ -33,5 +33,15 @@ public class TestUserService {
 		User user = userService.getUserById(2);
 		System.out.println(JSON.toJSONString(user));
 	}
+	
+	@Test
+	public void saveUser(){
+		User user = new User();
+		user.setAge(22);
+		user.setUsername("test05");
+		user.setPassword("123456");
+		
+		userService.saveUser(user);
+	}
 
 }
