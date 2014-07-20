@@ -30,7 +30,7 @@ public class TestUserService {
 	
 	@Test
 	public void getUserById(){
-		User user = userService.getUserById(1);
+		User user = userService.getUserById(2);
 		System.out.println(JSON.toJSONString(user));
 	}
 
