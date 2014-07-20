@@ -30,8 +30,13 @@ public class TestUserService {
 	
 	@Test
 	public void getUserById(){
+//		配置了缓存，相同查询只会执行一次
 		User user = userService.getUserById(2);
-		System.out.println(JSON.toJSONString(user));
+		logger.info(JSON.toJSONString(user));
+		User user2 = userService.getUserById(2);
+		logger.info(JSON.toJSONString(user2));
+		User user3 = userService.getUserById(2);
+		logger.info(JSON.toJSONString(user3));
 	}
 	
 	@Test
