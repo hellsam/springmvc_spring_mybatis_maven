@@ -1,5 +1,7 @@
 package com.ssmm.dao;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,16 +10,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
-import com.ssmm.dao.UserMapper;
 import com.ssmm.model.User;
-import com.ssmm.service.TestUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring.xml",
 		"classpath:spring-mybatis.xml" })
 public class TestUserDao {
 	private static final Logger logger = Logger
-			.getLogger(TestUserService.class);
+			.getLogger(TestUserDao.class);
 
 	@Autowired
 	private UserMapper userMapper;
@@ -45,5 +45,11 @@ public class TestUserDao {
 	public void getUserById() {
 		User user = userMapper.selectByPrimaryKey(1);
 		logger.info(JSON.toJSONString(user));
+	}
+	
+	@Test
+	public void getAll(){
+		List<User> users = userMapper.getAll();
+		logger.info(JSON.toJSONString(users));
 	}
 }

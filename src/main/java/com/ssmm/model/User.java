@@ -1,43 +1,55 @@
 package com.ssmm.model;
 
+import java.util.List;
+
 public class User {
-    private Integer id;
+	private Integer id;
 
-    private String username;
+	private String username;
 
-    private String password;
+	private String password;
 
-    private Integer age;
+	private Integer age;
 
-    public Integer getId() {
-        return id;
-    }
+	private List<Book> books;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public List<Book> getBooks() {
+		return books;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public Integer getAge() {
-        return age;
-    }
+	public void setUsername(String username) {
+		this.username = username == null ? null : username.trim();
+	}
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password == null ? null : password.trim();
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 }
